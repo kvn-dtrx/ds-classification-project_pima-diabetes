@@ -1,8 +1,10 @@
-# DS/ML Project: Flight Delay Prediction Challenge
+# DS/ML Project: Flight Delay Prediction
 
 ## Synopsis
 
-This notebook represents our analysis of the [flight delay dataset for Tunisair](https://zindi.africa/competitions/flight-delay-prediction-challenge) from [Zindi](https://zindi.africa). The general exercise reads as follows:
+Compare also with ""
+
+<!-- This repository contains our analysis of the [flight delay dataset for Tunisair](https://zindi.africa/competitions/flight-delay-prediction-challenge) from [Zindi](https://zindi.africa). The general exercise reads as follows:
 
 > **Value of Product**: Build a flight delay predictive model using Machine Learning techniques. The accurate prediction of flight delays will help all players in the air travel ecosystem to set up effective action plans to reduce the impact of the delays and avoid loss of time, capital and resources.
 
@@ -10,7 +12,7 @@ We try to predict the length of flight delay in $\mathrm{min}$. We evaluate our 
 
 As a baseline model, we choose a linear regression using weekday as predictor for flight delays, resulting in a $\mathrm{RMSE}$ of approximately $114$.
 
-As the main ML model, we used CatBoost that is suited for situations where the majority of features is categorical, resulting in a $\mathrm{RMSE}$ of approximately $96$.
+As the main ML model, we used CatBoost that is suited for situations where the majority of features is categorical, resulting in a $\mathrm{RMSE}$ of approximately $96$. -->
 
 <!-- 
 NOTE: Correct LaTeX usage here would be `\operatorname` instead of `\mathrm`. 
@@ -19,13 +21,7 @@ But GitHub cannot render the former macro.
 
 ## Repository Organisation
 
-The organization of the repository follows common conventions and therefore requires little explanation. For a quick orientation, we mention only the following:
-
-| Path | Content |
-| --- | --- |
-| [`./notebooks/*.ipynb`](./notebooks) | Analysis notebooks with technical details |
-| [`./docs/slides.html`](./docs/slides.md) | Presentation slides for non-technical audience |
-| [`./plots/*.png`](./docs) | Plots created by the notebooks |
+The organization of the repository follows common conventions and therefore requires little explanation. Our analysis notebooks with technical details can be found in [`./notebooks/*.ipynb`](./notebooks).
 
 ## Installation
 
@@ -39,8 +35,8 @@ The organization of the repository follows common conventions and therefore requ
 1. Navigate to a working directory of your choice, then clone the repository and enter it:
 
    ``` shell
-   git clone https://github.com/kvn-dtrx/ds-ml-project_flight-prediction-challenge.git &&
-       cd ds-ml-project_flight-prediction-challenge
+   git clone https://github.com/kvn-dtrx/ds-classification-project_pima-indians-diabetes.git &&
+       cd ds-classification-project_pima-indians-diabetes
    ```
 
 2. Choose the right setup option based on your operating system:

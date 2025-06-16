@@ -138,9 +138,9 @@ dmypy.json
 # Project-specific
 
 # Data directory
-data/*
-!data/.gitkeep
+**/data/*
+!**/data/.gitkeep
 
-# # Plots directory
-# plots/*
-# !plots/.gitkeep
+# Plots directory
+**/plots/*
+!**/plots/.gitkeep
