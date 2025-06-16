@@ -1,69 +1,77 @@
-[![Shipping files](https://github.com/neuefische/ds-diabetes-challenge/actions/workflows/workflow-02.yml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/neuefische/ds-diabetes-challenge/actions/workflows/workflow-02.yml)
-# Diabetes Challenge
+# DS/ML Project: Flight Delay Prediction Challenge
 
-After we learned some interesting algorithms to solve classification problems, it's time to implement them on new data and to compare their performance. You can find the challenge for today in the second notebook [Diabetes Challenge](2_Diabetes_Challenge.ipynb). If you need more information about the data set, you can have a look at the [Paper](Paper_on_Diabetes_Mellitus_Data_Set.pdf) included in this repo.
+## Synopsis
 
-The first notebook will introduce the concept of **pipelines**. Sklearn provides us is with a module that makes the usage of pipelines fun and easy. 
+This notebook represents our analysis of the [flight delay dataset for Tunisair](https://zindi.africa/competitions/flight-delay-prediction-challenge) from [Zindi](https://zindi.africa). The general exercise reads as follows:
 
+> **Value of Product**: Build a flight delay predictive model using Machine Learning techniques. The accurate prediction of flight delays will help all players in the air travel ecosystem to set up effective action plans to reduce the impact of the delays and avoid loss of time, capital and resources.
 
-## Set up your Environment
+We try to predict the length of flight delay in $\mathrm{min}$. We evaluate our models with the root mean square error ($\mathrm{RMSE}$), in alignment with the requirements of the challenge.
 
-Please make sure you have forked the repo and set up a new virtual environment. For this purpose you can use the following commands:
+As a baseline model, we choose a linear regression using weekday as predictor for flight delays, resulting in a $\mathrm{RMSE}$ of approximately $114$.
 
-The added [requirements file](requirements.txt) contains all libraries and dependencies we need to execute the Diabetes Challenge notebooks.
+As the main ML model, we used CatBoost that is suited for situations where the majority of features is categorical, resulting in a $\mathrm{RMSE}$ of approximately $96$.
 
-*Note: If there are errors during environment setup, try removing the versions from the failing packages in the requirements file. M1 shizzle.*
+<!-- 
+NOTE: Correct LaTeX usage here would be `\operatorname` instead of `\mathrm`. 
+But GitHub cannot render the former macro.
+-->
 
-### **`macOS`** type the following commands : 
+## Repository Organisation
 
-- We have also added a [Makefile](Makefile) which has the recipe called 'setup' which will run all the commands for setting up the environment.
-Feel free to check and use if you are tired of copy pasting so many commands.
+The organization of the repository follows common conventions and therefore requires little explanation. For a quick orientation, we mention only the following:
 
-     ```BASH
-    make setup
-    ```
-    After that active your environment by following commands:
-    ```BASH
-    source .venv/bin/activate
-    ```
-Or ....
-- Install the virtual environment and the required packages by following commands:
+| Path | Content |
+| --- | --- |
+| [`./notebooks/*.ipynb`](./notebooks) | Analysis notebooks with technical details |
+| [`./docs/slides.html`](./docs/slides.md) | Presentation slides for non-technical audience |
+| [`./plots/*.png`](./docs) | Plots created by the notebooks |
 
-    ```BASH
-    pyenv local 3.11.3
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
-    
-### **`WindowsOS`** type the following commands :
+## Installation
 
-- Install the virtual environment and the required packages by following commands.
+### Requirements
 
-   For `PowerShell` CLI :
+- Python 3.11.3
+- pyenv
 
-    ```PowerShell
-    pyenv local 3.11.3
-    python -m venv .venv
-    .venv\Scripts\Activate.ps1
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
+### Setup
 
-    For `Git-bash` CLI :
-  
-    ```BASH
-    pyenv local 3.11.3
-    python -m venv .venv
-    source .venv/Scripts/activate
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
+1. Navigate to a working directory of your choice, then clone the repository and enter it:
 
-    **`Note:`**
-    If you encounter an error when trying to run `pip install --upgrade pip`, try using the following command:
-    ```Bash
-    python.exe -m pip install --upgrade pip
-    ```
-  
+   ``` shell
+   git clone https://github.com/kvn-dtrx/ds-ml-project_flight-prediction-challenge.git &&
+       cd ds-ml-project_flight-prediction-challenge
+   ```
+
+2. Choose the right setup option based on your operating system:
+
+   - `make unix`: macOS/Linux.
+   - `make win`: Windows (PowerShell).
+
+   If you prefer to run the commands manually yourself or want to inspect what a `make` target does first, use the `-n` flag for a dry run. This prints the commands without executing them:
+
+   ``` shell
+   make -n <target>
+   ```
+
+3. Activate the virtual environment:
+
+   - On macOS/Linux, run:
+
+     ```shell
+     source .venv/bin/activate
+     ```
+
+   - On Windows (PowerShell), run:
+
+     ``` powershell
+     .\.venv\Scripts\Activate.ps1
+     ```
+
+## Colophon
+
+**Author:** [kvn-dtrx](https://github.com/kvn-dtrx)
+
+**Template:** This repository was created from the [Neue Fische DS Diabetes Challenge Repository](https://github.com/neuefische/ds-diabetes-challenge).
+
+**License:** [MIT License](license.txt)
