@@ -1,4 +1,4 @@
-# DS/ML Project: Flight Delay Prediction
+# DS Classification Project: Pima Indians Diabetes
 
 ## Synopsis
 
