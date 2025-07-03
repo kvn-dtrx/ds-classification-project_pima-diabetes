@@ -21,7 +21,7 @@ But GitHub cannot render the former macro.
 
 ## Repository Organisation
 
-The organization of the repository follows common conventions and therefore requires little explanation. Our analysis notebooks with technical details can be found in [`./notebooks/*.ipynb`](./notebooks).
+The organization of the repository follows common conventions and therefore requires little explanation. Our analysis notebooks (with technical details) are subordinated to [`notebooks/`](./notebooks/).
 
 ## Installation
 
