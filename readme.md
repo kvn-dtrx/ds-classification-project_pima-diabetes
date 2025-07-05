@@ -1,23 +1,18 @@
-# DS Classification Project: Pima Indians Diabetes
+# DS Classification Project: Pima Diabetes
 
 ## Synopsis
 
-Compare also with ""
+This repository presents an analysis of a dataset concerning diabetes among the [Pima](https://en.wikipedia.org/wiki/Akimel_O%27odham) people based near Phoenix, Arizona. The dataset is retrieved from the [*neue fische*](https://www.neuefische.de) database. It is very similar to <https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database> but contains contaminations deliberatively injected by the instructors for exercise purposes.
 
-<!-- This repository contains our analysis of the [flight delay dataset for Tunisair](https://zindi.africa/competitions/flight-delay-prediction-challenge) from [Zindi](https://zindi.africa). The general exercise reads as follows:
+For more details about the assignment, please refer to [this file](./archive/assignment.ipynb).
 
-> **Value of Product**: Build a flight delay predictive model using Machine Learning techniques. The accurate prediction of flight delays will help all players in the air travel ecosystem to set up effective action plans to reduce the impact of the delays and avoid loss of time, capital and resources.
+In seeking to predict the prospective diabetes status of individuals, we evaluate our models using the true positive rate (i.e., recall with respect to the presence of diabetes).
 
-We try to predict the length of flight delay in $\mathrm{min}$. We evaluate our models with the root mean square error ($\mathrm{RMSE}$), in alignment with the requirements of the challenge.
+As a baseline model, we choose a *logistic regression* with age and BMI (body mass index) as predictors, resulting in a true positive rate of approximately $114 \%$.
 
-As a baseline model, we choose a linear regression using weekday as predictor for flight delays, resulting in a $\mathrm{RMSE}$ of approximately $114$.
+As the main ML model, we employ a *decision tree* classifier, resulting in a true positive rate of approximately $96 \%$.
 
-As the main ML model, we used CatBoost that is suited for situations where the majority of features is categorical, resulting in a $\mathrm{RMSE}$ of approximately $96$. -->
-
-<!-- 
-NOTE: Correct LaTeX usage here would be `\operatorname` instead of `\mathrm`. 
-But GitHub cannot render the former macro.
--->
+TODO: - Ergebnisse
 
 ## Repository Organisation
 
@@ -35,8 +30,8 @@ The organization of the repository follows common conventions and therefore requ
 1. Navigate to a working directory of your choice, then clone the repository and enter it:
 
    ``` shell
-   git clone https://github.com/kvn-dtrx/ds-classification-project_pima-indians-diabetes.git &&
-       cd ds-classification-project_pima-indians-diabetes
+   git clone https://github.com/kvn-dtrx/ds-classification-project_pima-diabetes.git &&
+       cd ds-classification-project_pima-diabetes
    ```
 
 2. Choose the right setup option based on your operating system:
@@ -68,6 +63,6 @@ The organization of the repository follows common conventions and therefore requ
 
 **Author:** [kvn-dtrx](https://github.com/kvn-dtrx)
 
-**Template:** This repository was created from the [Neue Fische DS Diabetes Challenge Repository](https://github.com/neuefische/ds-diabetes-challenge).
+**Template:** This repository was derived from the [Neue Fische DS Diabetes Challenge Repository](https://github.com/neuefische/ds-diabetes-challenge).
 
 **License:** [MIT License](license.txt)
