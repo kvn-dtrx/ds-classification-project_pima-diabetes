@@ -8,11 +8,9 @@ For more details about the assignment, please refer to [this file](./archive/ass
 
 In seeking to predict the prospective diabetes status of individuals, we evaluate our models using the true positive rate (i.e., recall with respect to the presence of diabetes).
 
-As a baseline model, we choose a *logistic regression* with age and BMI (body mass index) as predictors, resulting in a true positive rate of approximately $114 \%$.
+As a baseline model, we choose a *logistic regression* with age and BMI (body mass index) as predictors, resulting in a true positive rate of approximately $0.70$.
 
-As the main ML model, we employ a *decision tree* classifier, resulting in a true positive rate of approximately $96 \%$.
-
-TODO: - Ergebnisse
+As the main ML model, we employ a *decision tree* classifier, resulting in a true positive rate of approximately $0.76$.
 
 ## Repository Organisation
 
