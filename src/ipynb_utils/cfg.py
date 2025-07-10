@@ -6,6 +6,7 @@
 import os
 import subprocess
 import matplotlib.pyplot as plt
+import matplotlib.style as mplstyle
 from typing import Any, Dict
 
 # ---
@@ -19,11 +20,10 @@ CFG: Dict[str, Any] = {}
 CFG["RSEED"] = 42
 
 # Matplotlib style
-# CFG["PLT_STYLE"] = "fast"
 # CFG["PLT_STYLE"] = "dark_background"
 CFG["PLT_STYLE"] = "seaborn-v0_8-darkgrid"
 
-# "Resolution" for stored plots.
+# (Pseudo-)Resolution for stored plots.
 CFG["DPI"] = 600
 
 # Root directory of the project.
@@ -33,20 +33,13 @@ CFG["ROOT_DIR"] = subprocess.run(
     text=True,
 ).stdout.strip()
 
-# Directory for storing data, plots, and source code.
+# Directory for storing data.
 ROOT_DIR = CFG["ROOT_DIR"]
 CFG["DATA_DIR"] = os.path.join(ROOT_DIR, "data")
-CFG["SRC_DIR"] = os.path.join(ROOT_DIR, "src")
-CFG["NOTEBOOKS_DIR"] = os.path.join(ROOT_DIR, "notebooks")
 
-DATA_DIR = CFG["DATA_DIR"]
-CFG["TRAIN_DATA_PATH"] = os.path.join(DATA_DIR, "train.csv")
-CFG["AIRPORTS_DATA_PATH"] = os.path.join(DATA_DIR, "airports.csv")
-CFG["PROCESSED_DATA_PATH"] = os.path.join(DATA_DIR, "df.pkl")
-
-NOTEBOOKS_DIR = CFG["NOTEBOOKS_DIR"]
-CFG["PLOTS_DIR"] = os.path.join(NOTEBOOKS_DIR, "plots")
-CFG["LOGS_DIR"] = os.path.join(NOTEBOOKS_DIR, "logs")
+# NOTEBOOKS_DIR = CFG["NOTEBOOKS_DIR"]
+# CFG["PLOTS_DIR"] = os.path.join(NOTEBOOKS_DIR, "plots")
+# CFG["LOGS_DIR"] = os.path.join(NOTEBOOKS_DIR, "logs")
 
 # ---
 
@@ -54,12 +47,12 @@ CFG["LOGS_DIR"] = os.path.join(NOTEBOOKS_DIR, "logs")
 
 # Basic matplotlib style settings
 PLT_STYLE = CFG["PLT_STYLE"]
-try:
+if PLT_STYLE in mplstyle.available:
     plt.style.use(PLT_STYLE)
-except:
+else:
     print("Could not load the specified matplotlib style:")
-    print(PLT_STYLE)
-    print("Default style will be used")
+    print(f"  {PLT_STYLE}")
+    print("Default style will be used.")
 
 plt.rcParams["axes.titleweight"] = "bold"
 plt.rcParams["axes.titlesize"] = 18

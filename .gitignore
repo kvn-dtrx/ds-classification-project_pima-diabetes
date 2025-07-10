@@ -1,3 +1,5 @@
+# From template
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -140,7 +142,3 @@ dmypy.json
 # Data directory
 **/data/*
 !**/data/.gitkeep
-
-# Plots directory
-**/plots/*
-!**/plots/.gitkeep
